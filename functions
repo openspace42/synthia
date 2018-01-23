@@ -10,7 +10,7 @@ define_vars() {
 	###################### Insert your variables here ######################
 	########################################################################
 
-	proj_name="Lorem Ipsum Dolor"
+	proj_name="Lorem-Ipsum-Dolor"
 	short_name="lid"
 	author_name="your_name_here"
 
