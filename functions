@@ -2,6 +2,8 @@
 
 ### openspace bash installer v0.1.0 [https://github.com/openspace42/bash_installer]
 
+os_bash_functions_version=0.1.0
+
 ################################################################################
 
 define_vars() {
@@ -37,18 +39,16 @@ check_root() {
 
 download_os_functions() {
 
-	os_bash_functions_version=0.1.0
-
-	base_dir=/root/openspace42
 	clone_author=openspace42
 	clone_name=bash_functions
+	base_dir=/root/$clone_author
 	clone_dir=$base_dir/$clone_name
 	if [ -d $clone_dir ]
 	then
 		rm -r ${clone_dir:?}
 	fi
 	mkdir -p $base_dir
-	( cd $base_dir && git clone https://github.com/$clone_author/$clone_name && cd $clone_name && git checkout tags/v$os_bash_functions_version &> /dev/null )
+	( cd $base_dir && git clone https://github.com/$clone_author/$clone_name && cd $clone_name && if [ ! ${bleeding_edge-null} = "-b" ]; then git checkout tags/v$os_bash_functions_version; fi &> /dev/null )
 
 }
 
