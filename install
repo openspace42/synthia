@@ -1,0 +1,55 @@
+#!/bin/bash
+
+### openspace bash installer v0.1.0 [https://github.com/openspace42/bash_installer]
+
+################################################################################
+
+### Set bash environment error management
+
+set -e
+set -u
+
+### Source local functions file
+
+echo
+source_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. $source_dir/functions
+
+### Source openspace functions file
+
+source_os_functions
+
+### Define formatting
+
+os-define_formatting
+
+### Define variables
+
+define_vars
+
+################################################################################
+
+if [[ "${@#--return-check}" = "$@" ]]
+then
+        echo "${r}${b}This script must not be run directly.${x}"
+	echo
+        echo "${b}You should instead run the | ${x}${g}${b}setup${x}${b} | script and it will take care of the installation itself.${x}"
+	echo
+        echo "${b}Exiting...${x}"
+        echo
+        exit 1
+fi
+
+################################################################################
+
+################################################################################
+######################## Insert installer commands here ########################
+################################################################################
+
+################################################################################
+
+################################################################################
+
+### Mark installer as completed successfully
+
+touch $source_dir/install_complete

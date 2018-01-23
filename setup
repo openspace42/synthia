@@ -1,0 +1,39 @@
+#!/bin/bash
+
+### openspace bash installer v0.1.0 [https://github.com/openspace42/bash_installer]
+
+################################################################################
+
+### Set bash environment error management
+
+set -e
+set -u
+
+### Source local functions file
+
+echo
+source_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. $source_dir/functions
+
+### Check for root user runtime
+
+check_root
+
+### Download and source openspace functions file
+
+download_os_functions
+source_os_functions
+
+### Define formatting
+
+os-define_formatting
+
+### Define variables
+
+define_vars
+
+################################################################################
+
+### Actually run the installer
+
+os-run_install

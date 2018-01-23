@@ -1,0 +1,70 @@
+#!/bin/bash
+
+### openspace bash installer v0.1.0 [https://github.com/openspace42/bash_installer]
+
+################################################################################
+
+define_vars() {
+
+	########################################################################
+	###################### Insert your variables here ######################
+	########################################################################
+
+	proj_name="Lorem Ipsum Dolor"
+	short_name="lid"
+	author_name="your_name_here"
+
+	########################################################################
+
+	os-define_vars
+
+}
+
+################################################################################
+
+check_root() {
+
+	if [[ $EUID -ne 0 ]]
+	then
+		echo "${r}${b}This script must be run as root${x}"
+		echo
+	        echo "${b}Exiting...${x}"
+	        echo
+	        exit 1
+	fi
+
+}
+
+download_os_functions() {
+
+	os_bash_functions_version=0.1.0
+
+	base_dir=/root/openspace42
+	clone_author=openspace42
+	clone_name=bash_functions
+	clone_dir=$base_dir/$clone_name
+	if [ -d $clone_dir ]
+	then
+		rm -r ${clone_dir:?}
+	fi
+	mkdir -p $base_dir
+	( cd $base_dir && git clone https://github.com/$clone_author/$clone_name && cd $clone_name && git checkout tags/v$os_bash_functions_version &> /dev/null )
+
+}
+
+source_os_functions() {
+
+	for f in /root/openspace42/bash_functions/*
+	do
+		. $f
+	done
+
+}
+
+################################################################################
+
+################################################################################
+######################## Insert project functions here #########################
+################################################################################
+
+################################################################################
