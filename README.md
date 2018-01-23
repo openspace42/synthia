@@ -1,5 +1,4 @@
 # bash_installer
-The minimalistic and standardized bash script installer that fully leverages the modular and extensible openspace bash_functions framework.
 
 ## How to configure
 
@@ -19,5 +18,7 @@ bash <proj_name>/setup
 ## Live examples:
 
 [aenigma](https://github.com/openspace42/aenigma)
+
 [EasyEngine-Backup-Restore](https://github.com/openspace42/EasyEngine-Backup-Restore)
+
 [EasyEngine-SFTP](https://github.com/openspace42/EasyEngine-SFTP)
