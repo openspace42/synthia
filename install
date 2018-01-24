@@ -27,6 +27,10 @@ os-define_formatting
 
 define_vars
 
+### Check for any already existing installation
+
+os-check_install_version
+
 ################################################################################
 
 if [[ "${@#--return-check}" = "$@" ]]
