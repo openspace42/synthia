@@ -1,4 +1,4 @@
-# bash_installer
+# bash_framework
 
 ## How to configure
 

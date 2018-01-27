@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### openspace bash framework v0.1.0 [https://github.com/openspace42/bash_installer]
+
 # Set bash environment error management
 
 set -e
