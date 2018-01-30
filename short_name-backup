@@ -29,7 +29,7 @@ define_vars
 
 ################################################################################
 
-os-check_root
+check_root
 
 os-log_script
 
@@ -75,7 +75,7 @@ then
 	rm -r ${tmp_dir:?}
 fi
 
+os-br_purge_dirs
+
 echo "${g}${b}Backup complete!${x}"
 echo
-
-os-br_purge_dirs

@@ -29,10 +29,48 @@ define_vars
 
 ################################################################################
 
-os-check_root
+check_root
 
 os-head_script
 
 os-read_conf_settings
 
 ################################################################################
+
+### Read any project-specific restore script arguments
+
+################################################################################
+
+os-br_purge_incomplete_archives
+
+os-br_purge_dirs
+
+os-br_create_dirs restore
+
+################################################################################
+
+os-br_restore_from_standalone_content_description() {
+	echo "${b-}These are the files that must be inside your restore directory:${x-}"
+}
+
+os-br_launch_restore
+
+################################################################################
+
+### Perform a [last] backup of this currently running installation just in case
+
+if [ ! "${skip_backup:-null}" = "y" ]
+then
+
+	os-br_last_local_backup
+
+fi
+
+################################################################################
+
+restore_loop
+
+os-br_purge_dirs
+
+echo "${g}${b}Restore complete!${x}"
+echo
