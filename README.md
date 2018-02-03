@@ -4,11 +4,11 @@
 
 It's extremely simple:
 
-1. Start your new project by cloning this repo
-2. Edit and customize your "functions" file:
-2.1. Insert your functions under "Insert your variables here".
-2.2. Insert your project-related functions under "Insert project functions here".
-2.3. Add your previously defined install-time functions under "Add your install-time functions here".
+* 1\. Start your new project by cloning this repo
+* 2\. Edit and customize your "functions" file:
+    * 2.1\. Insert your functions under "Insert your variables here".
+    * 2.2\. Insert your project-related functions under "Insert project functions here".
+    * 2.2\. Add your previously defined install-time functions under "Add your install-time functions here".
 
 ## How to use
 
