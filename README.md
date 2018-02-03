@@ -4,10 +4,11 @@
 
 It's extremely simple:
 
-1. Start your new project [if you don't have one already]
-2. Copy the "setup" file into your project directory exactly as it is
-3. Copy the "install" file into your project directory and insert your commands under "Insert installer commands here"
-4. Copy the "functions" file into your project directory and insert your functions under "Insert your variables here".
+1. Start your new project by cloning this repo
+2. Edit and customize your "functions" file:
+2.1. Insert your functions under "Insert your variables here".
+2.2. Insert your project-related functions under "Insert project functions here".
+2.3. Add your previously defined install-time functions under "Add your install-time functions here".
 
 ## How to use
 
