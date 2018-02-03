@@ -42,6 +42,7 @@ fi
 
 ### Check for any already existing installation
 
+### skip_backup=y # Uncomment to skip backup-before-upgrade prompt if applicable
 os-check_install_version
 
 ### All ready for installation
