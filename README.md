@@ -1,4 +1,4 @@
-# Bash-Framework
+# bash-framework
 
 ## How to configure
 
