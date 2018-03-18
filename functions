@@ -16,6 +16,8 @@ define_vars() {
 	short_name="lid"
 	author_name="your_name_here"
 
+	backup_ref_dir="/path/to/ref/dir"
+
 	########################################################################
 
 	os-define_vars
