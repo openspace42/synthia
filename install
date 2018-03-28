@@ -33,7 +33,7 @@ then
         source_dir="${source_dir%/tools}"
 fi
 
-. $source_dir/functions
+. "$source_dir/functions"
 
 ### Source openspace functions file
 
@@ -51,7 +51,6 @@ define_vars
 
 ### Check for any already existing installation
 
-### skip_backup=y # Uncomment to skip backup-before-upgrade prompt if applicable
 os-check_install_version
 
 ### All ready for installation
@@ -67,4 +66,4 @@ perform_installation
 
 ### Mark installer as completed successfully
 
-touch $source_dir/install_complete
+touch "$source_dir/install_complete"
