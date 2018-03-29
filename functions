@@ -16,7 +16,10 @@ define_vars() {
 	short_name="lid"
 	author_name="your_name_here"
 
+	### Set this to `y` if your project stores no data on end users' machines that could go lost during a re-install or update
 	skip_install_time_backup=n
+
+	### Set this to the directory that has the most impactful size when performing a backup [such as `/var/www/` for nginx-related projects]
 	backup_ref_dir="/path/to/ref/dir"
 
 	############################################################################
