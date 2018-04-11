@@ -125,7 +125,7 @@ validate_standalone_restore_content="n"
 
 restore_from_standalone_content_validation() {
 
-	### Perform standalone restore content validation
+	true   ### Edit this to perform standalone restore content validation
 
 }
 
