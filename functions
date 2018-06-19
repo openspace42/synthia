@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-### openspace bash-framework v0.1.6 [https://github.com/openspace42/bash-framework]
+### openspace bash-framework v0.1.7 [https://github.com/openspace42/bash-framework]
 
-os_bash_functions_version=0.2.2
+os_bash_functions_version=0.2.3
 
 ################################################################################
 
@@ -63,7 +63,7 @@ download_os_functions() {
 	fi
 
 	( cd "$clone_base_dir" && git clone "$clone_host/$clone_author/$clone_name" && cd "$clone_name" && \
-		if [ ! "${custom_bf-null}" = "-b" ]; \
+		if [ ! "${custom_bf-null}" = "e" ]; \
 		then \
 			git checkout "tags/v$os_bash_functions_version" && \
 			echo "$os_bash_functions_version" > "./version_installed"; \
@@ -103,8 +103,6 @@ perform_installation() {
 	############################################################################
 	############################################################################
 	############################################################################
-
-	rsync -aAXx $source_dir/ $install_dir/ --include=tools*** --include=functions --exclude="*"
 
 }
 
