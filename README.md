@@ -1,4 +1,4 @@
-# bash-framework
+# synthia
 
 ## How to configure
 

@@ -42,9 +42,9 @@ check_root
 while getopts ":b:r:" arguments
 do
     case $arguments in
-        b)	export custom_bf="$OPTARG"
+        b)	export custom_dna_version="$OPTARG"
 	        ;;
-		r)	export custom_rc="$OPTARG"
+		r)	export custom_repo_code="$OPTARG"
 	        ;;
         \?)	echo "Invalid option | -$OPTARG | for function | ${FUNCNAME[0]} |."
 	        echo
@@ -54,16 +54,16 @@ do
 done
 OPTIND=1
 
-if [ ! -z "${custom_bf-}" ]
+if [ ! -z "${custom_dna_version-}" ]
 then
-	case $custom_bf in
-		e)	echo "Using bleeding-edge bash-functions as per | -b e |."
+	case $custom_dna_version in
+		e)	echo "Using bleeding-edge dna as per | -b e |."
 			echo
 			;;
-		l)	echo "Disabling bash-functions download and using local version as per | -b l |."
+		l)	echo "Disabling dna download and using local version as per | -b l |."
 			echo
 			;;
-		*)	echo "Invalid content for | custom_bf | in function | ${FUNCNAME[0]} |."
+		*)	echo "Invalid content for | custom_dna_version | in function | ${FUNCNAME[0]} |."
 			echo
 			echo "Exiting..."
 			echo
@@ -72,13 +72,13 @@ then
 	esac
 fi
 
-if [ ! -z "${custom_rc-}" ]
+if [ ! -z "${custom_repo_code-}" ]
 then
-	case $custom_rc in
+	case $custom_repo_code in
 		e)	echo "Using bleeding-edge repo code as per | -r e |."
 			echo
 			;;
-		*)	echo "Invalid content for | custom_rc | in function | ${FUNCNAME[0]} |."
+		*)	echo "Invalid content for | custom_repo_code | in function | ${FUNCNAME[0]} |."
 			echo
 			echo "Exiting..."
 			echo
@@ -89,14 +89,14 @@ fi
 
 ### Download and source openspace functions file
 
-if [ ! "${custom_bf-null}" = "l" ]
+if [ ! "${custom_dna_version-null}" = "l" ]
 then
 
-    download_os_functions
+    download_os_dna
 
 fi
 
-source_os_functions
+source_os_dna
 
 ### Define formatting
 
