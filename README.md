@@ -15,8 +15,6 @@ It's extremely simple:
 
 ## Examples
 
-* 2.1\.
-
 ```
 proj_name="hello-world"
 short_name="hw"
