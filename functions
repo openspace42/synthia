@@ -2,26 +2,25 @@
 
 ### openspace synthia bootstrap framework v0.3.0 [https://github.com/openspace42/synthia]
 
-os_dna_version=0.3.0
+os_dna_version="0.3.1"
 
 ################################################################################
 
-define_vars() {
+synthia-define_vars() {
 
 	############################################################################
 	#################### Insert your initial variables here ####################
 	############################################################################
 
-	proj_name="Lorem-Ipsum-Dolor"
-	short_name="lid"
-	author_name="your_name_here"
-	git_host="https://github.com/"
+	export proj_name="hello_world"
+	export author_name="abstract_tree"
+	export git_host="https://github.com"
 
 	### Set this to `y` if your project stores no data on end users' machines that could go lost during a re-install or update
-	skip_install_time_backup=n
+	export skip_install_time_backup="n"
 
 	### Set this to the directory that has the most impactful size when performing a backup [such as `/var/www/` for nginx-related projects]
-	backup_ref_dir="/path/to/ref/dir"
+	export backup_ref_dir="/path/to/ref/dir"
 
 	############################################################################
 	############################################################################
@@ -43,49 +42,64 @@ define_vars() {
 
 ################################################################################
 
-check_root() {
+synthia-define_formatting() {
+
+	r=$'\e[1;31m'
+	g=$'\e[1;32m'
+	l=$'\e[1;34m'
+	m=$'\e[1;35m'
+	y=$'\e[1;33m'
+	o=$'\e[38;5;208m'
+	c=$'\e[1;36m'
+	n=$'\e[1;39m'
+	x=$'\e[0m'
+	b=$'\033[1m'
+
+}
+
+synthia-check_root() {
 
 	if [[ $EUID -ne 0 ]]
 	then
-		echo "This script must be run as root."
+		echo "${r-}${b-}This script must be run as root.${x-}"
 		echo
-		echo "Exiting..."
+		echo "${b-}Exiting...${x-}"
 		echo
 		exit 1
 	fi
 
 }
 
-download_os_dna() {
+synthia-download_dna() {
 
 	clone_host="https://github.com"
 	clone_author="openspace42"
 	clone_name="dna"
 
-	clone_base_dir=/root/$clone_author
-	clone_dir=$clone_base_dir/$clone_name
+	clone_base_dir="/root/${clone_author}"
+	clone_dir="${clone_base_dir}/${clone_name}"
 
-	mkdir -p $clone_base_dir
+	mkdir -p "${clone_base_dir}"
 
-	if [ -d $clone_dir ]
+	if [ -d "${clone_dir}" ]
 	then
-		rm -r ${clone_dir:?}
+		rm -r "${clone_dir:?}"
 	fi
 
-	( cd "$clone_base_dir" && git clone "$clone_host/$clone_author/$clone_name" && cd "$clone_name" && \
+	( cd "${clone_base_dir}" && git clone "${clone_host}/${clone_author}/${clone_name}" && cd "$clone_name" && \
 		if [ ! "${custom_dna_version-null}" = "b" ]; \
 		then \
-			git checkout "tags/v$os_dna_version" && \
-			echo "$os_dna_version" > "./version_installed"; \
+			git checkout "tags/v${os_dna_version}" && \
+			echo "${os_dna_version}" > "./version_installed"; \
 		else \
 			clone_latest_commit="$(git log -n 1 --pretty=format:"%H"  | cut -c1-7)" && \
-			echo "bleeding-edge-$clone_latest_commit" > "./version_installed"; \
+			echo "bleeding-edge-${clone_latest_commit}" > "./version_installed"; \
 		fi &> /dev/null \
 	)
 
 }
 
-source_os_dna() {
+synthia-source_dna() {
 
 	for f in /root/openspace42/dna/functions/*
 	do
