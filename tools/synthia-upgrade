@@ -121,6 +121,8 @@ then
         rm -r "${proj_name}/"
 fi
 
+echo
+
 git clone "${git_host}/${author_name}/${proj_name}"
 
 dna-run_install
