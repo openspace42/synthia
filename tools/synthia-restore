@@ -155,7 +155,7 @@ fi
 #################### Specify your restore-time settings here ###################
 ################################################################################
 
-os-br_restore_from_standalone_content_description() {
+dna-br_restore_from_standalone_content_description() {
 	echo "${b-}<the list of files that must be inside your restore directory>${x-}"
 }
 
