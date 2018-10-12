@@ -17,7 +17,6 @@ It's extremely simple:
 
 ```
 proj_name="hello-world"
-short_name="hw"
 author_name="openspace42"
 ```
 
