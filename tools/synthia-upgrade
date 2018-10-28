@@ -83,7 +83,7 @@ OPTIND=1
 
 ### Download dna
 
-			synthia-download_dna
+synthia-download_dna
 
 ### Source dna
 
