@@ -26,9 +26,10 @@ Set `skip_install_time_backup` to `y` if your project stores no data on end user
 
 Set `backup_ref_dir` to the directory that has the most impactful size when performing a backup [such as `/var/www/` for nginx-related projects]
 
-## How to install the end project
+## How to install the final project
 
-```bash
+```
+bash
 bash <proj_name>/setup
 ```
 
