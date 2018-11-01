@@ -1,6 +1,8 @@
 # synthia
 
-## How to configure
+The framework that includes all of the **absolute essential code** to bootstrap a **fully functional bash+git project**, leveraging our highly refined and standardized **dna functions**.
+
+## How to start your own synthia+dna-based project:
 
 It's extremely simple:
 
@@ -35,3 +37,5 @@ bash <proj_name>/setup
 [aenigma](https://github.com/openspace42/aenigma)
 
 [raptor](https://github.com/openspace42/raptor)
+
+[incognitum](https://github.com/openspace42/incognitum)
