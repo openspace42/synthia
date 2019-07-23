@@ -14,7 +14,7 @@ synthia-define_vars() {
 	#################### Insert your initial variables here ####################
 	############################################################################
 
-	export proj_name="hello_world"
+	export project_name="hello_world"
 	export author_name="abstract_tree"
 	export git_host="https://github.com"
 

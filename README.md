@@ -18,7 +18,7 @@ It's extremely simple:
 ## Examples
 
 ```
-proj_name="hello-world"
+project_name="hello-world"
 author_name="openspace42"
 ```
 
@@ -30,7 +30,7 @@ Set `backup_ref_dir` to the directory that has the most impactful size when perf
 
 ```
 bash
-bash <proj_name>/setup
+bash <project_name>/setup
 ```
 
 ## Live examples:
